@@ -15,7 +15,7 @@ import emails
 def get_file_path():
     home_dir = Path.home()
     while True:
-        full_path = Path(input('\nEnter Full Folder Path to Organize? ').strip())
+        full_path = Path(input('\nEnter Full Folder Path to Organize: (e.g. /Users/<username>/Downloads/) ').strip())
         if full_path.exists():
             while True:
                 confirm = input('Choose an option: \n(1) Review Organized files? or \n(2) Save Files Directly to User Folders? \nChoice: ')
@@ -55,7 +55,7 @@ def organize_files_for_review(src_directory):
                    {'foldername': 'MP4 files', 'extension': ['.mp4'] },
                 ]
     
-    audio_types = [ {'foldername': 'MP3 files', 'extension': ['.mp3']} ]
+    audio_types = [ {'foldername': 'MP3 files', 'extension': ['.mp3', '.wav']} ]
     installer_types = [ {'foldername': 'DMG files', 'extension': ['.dmg']} ]
 
     filetypes_list = [text_types, image_types, video_types, audio_types, installer_types ]
