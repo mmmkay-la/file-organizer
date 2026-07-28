@@ -204,7 +204,7 @@ def create_log(logs, src_directory):
             l_file.write(f'Date: {date.today()}\n')
             for log_list in logs:
                 if len(log_list) > 1:
-                    l_file.writelines(log_list)
+                    l_file.write('\n'.join(log_list))
 
         print(f'Completed Moving files. Log file located at {log_filename}.\n')
     except Exception as e:
